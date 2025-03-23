@@ -10,7 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+//		SpringApplication.run(DemoApplication.class, args);
+//		GrpcInitServer.create(9090,Object.class)
+//				.start()
+//				.await();
 
 //		Queue<Integer> queue = new Queue<Integer>();
 //		queue.enqueue(1);

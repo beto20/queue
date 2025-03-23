@@ -1,6 +1,8 @@
 syntax = "proto3";
 package message;
 
+import "google/protobuf/empty.proto";
+
 option java_multiple_files = true;
 option java_package = "com.example.pub";
 
@@ -14,6 +16,18 @@ message MessageResponse {
   string response = 1;
 }
 
+message Payload {
+  string body = 1;
+  string header = 2;
+  string priority = 3;
+}
+
+
 service MessageService {
-  rpc SendMessageMethod(MessageRequest) returns (MessageResponse);
+
+  // Client Stream
+  rpc ReceiveMessage(MessageResponse) returns (stream MessageRequest);
+
+  // Server Stream
+  rpc SendMessage(google.protobuf.Empty) returns (stream MessageRequest);
 }

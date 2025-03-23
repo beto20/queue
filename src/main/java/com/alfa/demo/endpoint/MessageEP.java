@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageEP {
 
-    @Bean
+//    @Bean
     public String mock() {
         QueueStarter<Object> infraQueue = new QueueStarter<Object>("QueueStarter1");
         System.out.println("QUEUE START: " + infraQueue.getName());
